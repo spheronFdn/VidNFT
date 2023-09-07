@@ -21,7 +21,7 @@ const Livepeer: FC<ILivepeer> = ({ cid }) => {
   const [playbackId, setPlaybackId] = useState("");
 
   useEffect(() => {
-    fetch(`http://provider.palmito.duckdns.org:30032/api/v0/ls?arg=${cid}`, {
+    fetch(`${process.env.REACT_APP_IPFS_PARSER_ADDRESS}/api/v0/ls?arg=${cid}`, {
       method: "POST",
       body: JSON.stringify({
         arg: cid,
