@@ -20,8 +20,6 @@ const PosterImage = () => {
 const Livepeer: FC<ILivepeer> = ({ cid }) => {
   const [playbackId, setPlaybackId] = useState("");
 
-  console.log(cid);
-
   useEffect(() => {
     fetch(`http://provider.palmito.duckdns.org:30032/api/v0/ls?arg=${cid}`, {
       method: "POST",
@@ -40,7 +38,7 @@ const Livepeer: FC<ILivepeer> = ({ cid }) => {
     <>
       {playbackId && (
         <Player
-          title="Waterfalls"
+          title="videoNFTs"
           playbackId={playbackId}
           loop
           autoPlay={false}
