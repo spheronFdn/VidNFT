@@ -135,6 +135,7 @@ const MintNft: FC = () => {
       name: nftDetails.name,
       description: nftDetails.description,
       filename,
+      address,
     };
     const stringifiedDetails = JSON.stringify(details);
     const uri = base64_encode(stringifiedDetails);

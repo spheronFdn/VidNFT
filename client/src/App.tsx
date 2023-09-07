@@ -25,7 +25,7 @@ const App: FC = () => {
         provider
       );
       const res = await erc721Contract.getAllNfts();
-      setNfts(res.slice(25));
+      setNfts(res);
     } catch (error) {
       console.error(error);
     } finally {

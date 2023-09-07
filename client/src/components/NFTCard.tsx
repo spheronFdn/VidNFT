@@ -10,6 +10,7 @@ const NFTCard: FC<INFTCard> = ({ nft }) => {
   const videoCID = JSON.parse(base64_decode(nft.metadataURI)).cid;
   const name = JSON.parse(base64_decode(nft.metadataURI)).name;
   const description = JSON.parse(base64_decode(nft.metadataURI)).description;
+  const address = JSON.parse(base64_decode(nft.metadataURI)).address;
 
   return (
     <section
@@ -21,7 +22,12 @@ const NFTCard: FC<INFTCard> = ({ nft }) => {
       {videoCID && <LivepeerClient cid={videoCID} />}
       <div className="flex flex-col mx-4 mt-4">
         <p className="text-white text-2xl font-bold">{name}</p>
-        <p className="text-[#c6c2c6] text-base font-bold pt-1">{description}</p>
+        <p className="text-[#c6c2c6] text-base font-bold pt-1 mb-4">
+          {description}
+        </p>
+        {address && (
+          <p className="text-[#c6c2c6] text-xs font-bold pt-1">By: {address}</p>
+        )}
       </div>
     </section>
   );
